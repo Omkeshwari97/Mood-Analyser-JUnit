@@ -32,7 +32,7 @@ public class MoodAnalyser {
 		} 
 		catch (NullPointerException e) 
 		{
-			throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_NULL,"Invalid mood");
+			throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_NULL,"Null mood");
 		}
 	}
 
