@@ -27,10 +27,10 @@ public class MoodAnalyserTest {
 	}
 	
 	@Test
-	public void givenMessage_returnNullMoodHandled_whenNull()
+	public void givenMessage_returnHappy_whenNull()
 	{
 		MoodAnalyser moodanalyser = new MoodAnalyser(null);
-		assertEquals("Null Mood Handled",moodanalyser.analyseMood());
+		assertEquals("Happy",moodanalyser.analyseMood());
 	}
 }
 
