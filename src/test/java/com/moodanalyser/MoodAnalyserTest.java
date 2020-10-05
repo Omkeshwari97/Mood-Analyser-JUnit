@@ -8,7 +8,7 @@ public class MoodAnalyserTest {
 	@Test
 	public void givenMessage_returnHappy_whenHappyMood()
 	{
-		MoodAnalyser moodanalyser = new MoodAnalyser("I am Happy");
+		MoodAnalyser moodanalyser = new MoodAnalyser("I am in Happy Mood");
 		assertEquals("Happy",moodanalyser.analyseMood());
 	}
 	
