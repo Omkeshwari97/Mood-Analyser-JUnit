@@ -16,7 +16,7 @@ public class MoodAnalyserTest {
 	public void givenMessage_returnSad_whenSad()
 	{
 		MoodAnalyser moodanalyser = new MoodAnalyser();
-		assertEquals("Sad",moodanalyser.analyseMood("She is Sad"));
+		assertEquals("Sad",moodanalyser.analyseMood("I am Sad"));
 	}
 }
 
