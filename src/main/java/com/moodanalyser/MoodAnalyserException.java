@@ -15,4 +15,9 @@ public class MoodAnalyserException extends Exception{
 		this.type=type;
 	}
 
+	public ExceptionType getType() 
+	{
+		return type;
+	}
+
 }

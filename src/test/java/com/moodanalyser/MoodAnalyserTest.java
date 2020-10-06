@@ -39,17 +39,33 @@ public class MoodAnalyserTest {
 	}
 	
 	@Test
-	public void givenMessage_returnInvalidInput_whenNull()
+	public void givenMessage_returnHappy_whenAnyMood()
 	{
-		MoodAnalyser moodanalyser = new MoodAnalyser(null);
-		assertThrows(MoodAnalyserException.class, () -> {moodanalyser.analyseMood();},"Invalid mood");
+		MoodAnalyser moodanalyser = new MoodAnalyser("I am in No Mood");
+		try 
+		{
+			assertEquals("Happy",moodanalyser.analyseMood());
+		} 
+		catch (MoodAnalyserException e) 
+		{
+			System.out.println(e.getMessage());
+		}	
 	}
 	
 	@Test
-	public void givenMessage_returnInvalidInput_whenEmpty()
+	public void givenMessage_throwMoodAnalysisException_whenNullMood()
+	{
+		MoodAnalyser moodanalyser = new MoodAnalyser(null);
+		MoodAnalyserException exception = assertThrows(MoodAnalyserException.class, () -> {moodanalyser.analyseMood();},"Invalid mood");
+		assertEquals(exception.getType(), MoodAnalyserException.ExceptionType.ENTERED_NULL);
+	}
+	
+	@Test
+	public void givenMessage_throwMoodAnalysisException_whenEmptyMood()
 	{
 		MoodAnalyser moodanalyser = new MoodAnalyser("");
-		assertThrows(MoodAnalyserException.class, () -> {moodanalyser.analyseMood();},"Invalid mood");
+		MoodAnalyserException exception = assertThrows(MoodAnalyserException.class, () -> {moodanalyser.analyseMood();},"Invalid mood");
+		assertEquals(exception.getType(), MoodAnalyserException.ExceptionType.ENTERED_EMPTY);
 	}
 }
 
